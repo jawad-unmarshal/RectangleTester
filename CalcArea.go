@@ -1,13 +1,19 @@
 package RectangleTester
 
-func RectArea(length, breadth float64) float64 {
-	return length * breadth
-}
-func RectPerimeter(length, breadth float64) float64 {
-	return 2. * (length + breadth)
+type Rectangle struct {
+	length  float64
+	breadth float64
 }
 
-func SumAreaPeri(length, breadth float64) float64 {
-	return RectArea(length, breadth) + RectPerimeter(length, breadth)
+func (rect Rectangle) Area() float64 {
+	return rect.breadth * rect.length
+}
+
+func (rect Rectangle) Perimeter() float64 {
+	return 2. * (rect.length + rect.breadth)
+}
+
+func (rect Rectangle) SumAreaPerimeter() float64 {
+	return rect.Area() + rect.Perimeter()
 
 }
